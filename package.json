@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-webdav",
   "description": "提供一个 webdav 服务，方便其他插件使用",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -10,9 +10,9 @@
   ],
   "license": "MIT",
   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/FlameTEXT/koishi-plugin-webdav.git"
-},
+    "type": "git",
+    "url": "git+https://github.com/FlameTEXT/koishi-plugin-webdav.git"
+  },
   "scripts": {},
   "keywords": [
     "chatbot",

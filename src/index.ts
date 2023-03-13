@@ -1,23 +1,26 @@
 import { Context, Schema, Service } from 'koishi'
-import { createClient,WebDAVClient } from 'webdav'
+import { createClient, WebDAVClient } from 'webdav'
 
 
 declare module 'koishi' {
   interface Context {
-    webdavcli: WebDAVClient
+    webdav: Webdav
   }
 }
 
 class Webdav extends Service {
   static readonly methods = ['webdav']
-  cli:WebDAVClient
+  cli: WebDAVClient
 
   constructor(ctx: Context, private config: Webdav.Config) {
-    super(ctx, '__webdav__', true)
-    this.cli = createClient(config.webdavLink,{
-        'username':config.webdavUsername,
-        'password':config.webdavPassword
-      })
+    super(ctx, 'webdav')
+  }
+
+  start(){
+    this.cli = createClient(this.config.webdavLink, {
+      'username': this.config.webdavUsername,
+      'password': this.config.webdavPassword
+    })
   }
 }
 
@@ -35,8 +38,7 @@ namespace Webdav {
   })
 }
 
-Context.service('__webdav__', Webdav)
+Context.service('webdav', Webdav)
 
 export default Webdav
 
-//let ctx:Context;ctx.webdavcli.copyFile

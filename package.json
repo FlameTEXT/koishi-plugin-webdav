@@ -24,6 +24,6 @@
     "koishi": "^4.11.6"
   },
   "dependencies": {
-    "webdav": "^5.0.0-r3"
+    "webdav": "4.11.2"
   }
 }
